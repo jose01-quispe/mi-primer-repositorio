@@ -78,6 +78,14 @@
 .btn-warning:pressed {
     -fx-background-color: #ffcd39;
 }
-
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #5782e6;
+}
+.label {
+    -fx-text-fill: #2cf819;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;}
+}
 
 
