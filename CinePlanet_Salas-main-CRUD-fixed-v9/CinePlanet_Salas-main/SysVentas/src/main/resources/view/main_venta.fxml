@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="miContenedor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.upeu.sysventas.controller.VentaController">
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+            <children>
+                <Label text="Registrar venta">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <GridPane hgap="10.0" vgap="8.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="70.0" />
+                        <ColumnConstraints minWidth="260.0" prefWidth="300.0" />
+                        <ColumnConstraints minWidth="70.0" />
+                        <ColumnConstraints minWidth="380.0" prefWidth="480.0" />
+                        <ColumnConstraints minWidth="60.0" />
+                        <ColumnConstraints minWidth="70.0" prefWidth="80.0" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Cliente" />
+                        <ComboBox fx:id="cbCliente" maxWidth="1.7976931348623157E308" promptText="Selecciona un cliente" GridPane.columnIndex="1" />
+                        <Label text="Función" GridPane.columnIndex="2" />
+                        <ComboBox fx:id="cbFuncion" maxWidth="1.7976931348623157E308" promptText="Selecciona una función" GridPane.columnIndex="3" />
+                        <Label text="Entradas" GridPane.columnIndex="4" />
+                        <TextField fx:id="txtEntradas" GridPane.columnIndex="5" />
+                        <Label text="Producto" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbProducto" maxWidth="1.7976931348623157E308" promptText="Selecciona un producto" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Cantidad" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HBox spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <children>
+                                <TextField fx:id="txtCantidad" prefWidth="80.0" />
+                                <Button mnemonicParsing="false" onAction="#agregarProducto" styleClass="btn, btn-primary" text="Agregar al carrito" />
+                            </children>
+                        </HBox>
+                        <Label text="Tipo de pago" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cbTipoPago" maxWidth="1.7976931348623157E308" promptText="Efectivo, Yape o Tarjeta" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+                <Label fx:id="lblMsg" maxWidth="1.7976931348623157E308" text="" />
+                <TableView fx:id="tablaCarrito" prefHeight="190.0" />
+                <HBox alignment="CENTER_LEFT" spacing="15.0">
+                    <children>
+                        <Label text="Entradas:" />
+                        <Label fx:id="lblSubEntradas" text="S/ 0.00" />
+                        <Label text="Productos:" />
+                        <Label fx:id="lblSubProductos" text="S/ 0.00" />
+                        <Label style="-fx-font-weight: bold;" text="Total:" />
+                        <Label fx:id="lblTotal" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="S/ 0.00" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#vaciarCarrito" styleClass="btn, btn-warning" text="Vaciar carrito" />
+                        <Button mnemonicParsing="false" onAction="#verTicket" styleClass="btn, btn-info" text="Ver ticket" />
+                        <Button mnemonicParsing="false" onAction="#registrarVenta" styleClass="btn, btn-success" text="Registrar venta" />
+                    </children>
+                </HBox>
+                <Label text="Ventas registradas">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tablaVentas" prefHeight="170.0" VBox.vgrow="ALWAYS" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
